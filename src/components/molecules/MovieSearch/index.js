@@ -16,7 +16,7 @@ const MovieSearch = () => {
 
     return (
         <div>
-            <div className='w-full h-28 bg-sky-900 flex items-center justify-between px-16'>
+            <div className='w-full h-28 bg-sky-900 flex flex-col lg:flex-row items-center justify-between px-16 pb-4 lg:pb-0'>
                 <h1 className='text-white text-4xl font-bold'>MyMovie</h1>
                 <form className='flex items-center gap-4'>
                     <Input
