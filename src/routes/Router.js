@@ -12,7 +12,7 @@ function Router() {
                 <Route index element={<Login/>} />
                 <Route path='/Login' element={<Login/>} />
                 <Route path='/Home' element={<Home/>} />
-                <Route path='/movies/:id' element={<Detail/>} />
+                <Route path='/movie/:movieId' element={<Detail/>} />
             </Routes>
         </BrowserRouter>
     </div>

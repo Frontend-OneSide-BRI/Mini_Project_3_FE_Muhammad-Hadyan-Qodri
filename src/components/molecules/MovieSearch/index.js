@@ -3,7 +3,7 @@ import { useSearchQuery } from '../../../services/API/movieApi';
 import Input from '../../atoms/Input';
 import MovieCard from '../MovieCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const MovieSearch = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +23,7 @@ const MovieSearch = () => {
                         value={searchTerm}
                         onChange={handleSearch}
                     />
-                    <FontAwesomeIcon onSubmit={handleSearch} icon={faSearch} size="xl" style={{color: "#e7eaee"}} />
+                    <FontAwesomeIcon icon={faSearch} size="xl" style={{ color: "#e7eaee" }} />
                 </form>
             </div>
             <div>
@@ -32,13 +32,16 @@ const MovieSearch = () => {
                 {data && (
                     <div className='px-9 py-10 flex gap-10 flex-wrap justify-center'>
                         {data.results.map((movie) => (
-                            <MovieCard
-                                key={movie.id}
-                                judul={movie.title}
-                                poster={movie.poster_path}
-                                date={movie.release_date} 
-                                rating={movie.vote_average}
-                            />
+                            <div key={movie.id}>
+                                <a href={`/movie/${movie.id}`}>
+                                    <MovieCard
+                                        judul={movie.title}
+                                        poster={movie.poster_path}
+                                        date={movie.release_date}
+                                        rating={movie.vote_average}
+                                    />
+                                </a>
+                            </div>
                         ))}
                     </div>
                 )}
